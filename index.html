@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>scroll page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0"/> <!--늘이거나 줄이는 작업을 하지 않겠다-->
+    <meta name="description" content="scroll page">
+    <link rel="stylesheet" href="./css/initial.min_back.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+  </head>
+  <body>
+    <!-- to the top button -->
+    <div class="back_to_top">
+      <a href="#intro"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" width="20px" height="20px"><path d="M0 0h24v24H0z" fill="none"/><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg></a>
+    </div>
+    <!--mobile menu button-->
+    <input type="checkbox" id="gnbcheck" name="gnbcheck">
+    <label for="gnbcheck" id="gnbbtn">
+      <span></span><span></span><span></span>
+    </label>
+    <header id="header">
+      <h1 id="top_logo"><a href="#"><img src="./img/logo/mainlogo.png" alt="logo"></a></h1>
+      <nav id="gnb">
+        <label for="gnbcheck" id="mobile_close_btn"></label>
+        <ul>
+          <li><a href="#intro">HOME</a></li>
+          <li><a href="#humanliketech">INTRODUCE</a></li>
+          <li><a href="#selvytech">SELVY TECHNOLOGY</a></li>
+          <li><a href="#product">PRODUCT</a></li>
+          <li><a href="#lab">LAB</a></li>
+          <li><a href="#partner">PARTNER</a></li>
+          <li><a href="#contactus">CONTACT US</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- mainbanner -->
+    <section id="intro">
+      <article>
+        <p>인공지능으로 사람에 가장 가까운 기술을 만들어갑니다.</p>
+        <h2>Human Like Technology</h2>
+        <a href="#product" class="button">PRODUCT 보기</a>
+      </article>
+    </section>
+    <!-- section contents area -->
+    <main>
+      <!-- gnb menu section 노출 영역 -->
+      <section id="humanliketech">
+        <div class="row">
+          <div>Human Like Technology</div>
+          <div>Selvy</div>
+          <p>Selvy는 사람에 가까운 자연스러운 인터페이스를 제공하는 SELVAS AI의 통합 인공지능 브랜드입니다.</p>
+          <p>음성인식, 음성합성, 필기인식, 광학문자인식, 자연어처리 등<br>
+            다양한 인공지능 솔루션에 Selvy가 있습니다.</p>
+        </div>
+      </section>
+      <section id="selvytech">
+        <div class="row">
+          <h2>Selvy Technology</h2>
+          <p>음성인식, 음성합성, 필기인식, OCR, 자연어처리 기술은<br>
+            Selvy AI의 기반이 됩니다.</p>
+          <div class="column">
+            <div class="inner none_type">
+              <a href="#"><img src="./img/selvytechnology/1.png" alt="portfolio img01" class="shadow"></a>
+            </div>
+          </div>
+          <div class="column">
+            <div class="inner none_type">
+              <a href="#"><img src="./img/selvytechnology/2.png" alt="portfolio img01" class="shadow"></a>
+            </div>
+          </div>
+          <div class="column">
+            <div class="inner none_type">
+              <a href="#"><img src="./img/selvytechnology/3.png" alt="portfolio img01" class="shadow"></a>
+            </div>
+          </div>
+          <div class="column">
+            <div class="inner none_type">
+              <a href="#"><img src="./img/selvytechnology/4.png" alt="portfolio img01" class="shadow"></a>
+            </div>
+          </div>
+          <div class="column">
+            <div class="inner none_type">
+              <a href="#"><img src="./img/selvytechnology/5.png" alt="portfolio img01" class="shadow"></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="product">
+        <div class="row">
+          <h2>PRODUCT</h2>
+          <div class="column">
+            <div class="inner none_type">
+              <img src="./img/product/1-1.png" alt="product1">
+              <p>유통, 이커머스. 금융 등 다양한 비즈니스에 최적화된 고객센터 솔루션</p>
+              <a href="#"><div>체험하기<img src="./img/product/goto.png" alt=""></div></a>
+            </div>
+          </div>
+          <div class="column">
+            <div class="inner none_type">
+              <img src="./img/product/2-2.png" alt="product1">
+              <p>건강검진 기록으로 주요 질환의 발병 통계지수를 확인하는<br>인공지능 발병통계지수 분석 솔루션</p>
+              <a href="#"><div>자세히보기<img src="./img/product/goto.png" alt=""></div></a>
+            </div>
+          </div>
+          <div class="column">
+            <div class="inner none_type">
+              <img src="./img/product/3-3.png" alt="product1">
+              <p>목소리를 인식하고 정확하게 분리하는 화자 인식 기술로<br>대면상담/조사 녹취록을 쉽고 빠르게 작성하는<br>대화음성 인식 전용 인공지능 솔루션</p>
+              <a href="#"><div>자세히보기<img src="./img/product/goto.png" alt=""></div></a>
+            </div>
+          </div>
+          <div class="column">
+            <div class="inner none_type">
+              <img src="./img/product/4-4.png" alt="product1">
+              <p>의료과정에서 발생하는 의무기록을 음성으로 쉽고 빠르게 작성하는<br>의료녹취 솔루션</p>
+              <a href="#"><div>자세히보기<img src="./img/product/goto.png" alt=""></div></a>
+            </div>
+          </div>
+          <a href="#product" class="button">전체 product & solution</a>
+        </div>
+      </section>
+      <section id="lab">
+        <div class="row">
+          <div class="column">
+            <div class="inner none_type">
+              <h2><span>인공지능</span><br>전문 LAB에 맡기세요</h2>
+              <p>최첨단 딥러닝 인공지능 기반기술을 전문으로 연구, 개발하는 HCI LAB, NLP LAB과<br>
+                도메인 전문성을 기반으로 연구, 개발하는 Healthcare, Medical, Edu-Tech, Mobility, BIO LAB으로<br>
+                비지니스에 필요한 인공지능 솔루션을 제공합니다.</p>
+                <div class="background"><img src="./img/bottom-banner.png" alt=""></div>
+                <a href="#product" class="button">전체 product & solution</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="partner">
+        <div class="row">
+          <h2>PARTNER</h2>
+          <!-- <a href="#">PARTNER</a> -->
+          <div class="column">
+            <div class="inner none_type">
+              <img src="./img/partner/partner-1.png" alt="partner img01">
+            </div>
+          </div>
+          <div class="column">
+            <div class="inner none_type">
+              <img src="./img/partner/partner-2.png" alt="partner img02">
+            </div>
+          </div>
+          <div class="column">
+            <div class="inner none_type">
+              <img src="./img/partner/partner-3.png" alt="partner img03">
+            </div>
+          </div>
+          <div class="column">
+            <div class="inner none_type">
+              <img src="./img/partner/partner-4.png" alt="partner img04">
+            </div>
+          </div>
+          <div class="column">
+            <div class="inner none_type">
+              <img src="./img/partner/partner-5.png" alt="partner img05">
+            </div>
+          </div>
+          <div class="column">
+            <div class="inner none_type">
+              <img src="./img/partner/partner-6.png" alt="partner img06">
+            </div>
+          </div>
+          <div class="column">
+            <div class="inner none_type">
+              <img src="./img/partner/partner-7.png" alt="partner img07">
+            </div>
+          </div>
+          <div class="column">
+            <div class="inner none_type">
+              <img src="./img/partner/partner-8.png" alt="partner img08">
+            </div>
+          </div>
+          <div class="column">
+            <div class="inner none_type">
+              <img src="./img/partner/partner-9.png" alt="partner img09">
+            </div>
+          </div>
+          <div class="column">
+            <div class="inner none_type">
+              <img src="./img/partner/partner-10.png" alt="partner img010">
+            </div>
+          </div>
+          <div class="column">
+            <div class="inner none_type">
+              <img src="./img/partner/partner-11.png" alt="partner img011">
+            </div>
+          </div>
+          <div class="column">
+            <div class="inner none_type">
+              <img src="./img/partner/partner-12.png" alt="partner img012">
+            </div>
+          </div>
+          <div class="column">
+            <div class="inner none_type">
+              <img src="./img/partner/partner-13.png" alt="partner img013">
+            </div>
+          </div>
+          <div class="column">
+            <div class="inner none_type">
+              <img src="./img/partner/partner-14.png" alt="partner img014">
+            </div>
+          </div>
+          <div class="column">
+            <div class="inner none_type">
+              <img src="./img/partner/partner-15.png" alt="partner img015">
+            </div>
+          </div>
+          <div class="column">
+            <div class="inner none_type">
+              <img src="./img/partner/partner-16.png" alt="partner img016">
+            </div>
+          </div>
+          <div class="column">
+            <div class="inner none_type">
+              <img src="./img/partner/partner-17.png" alt="partner img017">
+            </div>
+          </div>
+          <div class="column">
+            <div class="inner none_type">
+              <img src="./img/partner/partner-18.png" alt="partner img018">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contactus">
+        <div class="row">
+          <div class="column">
+            <div class="inner none_type">
+              <h2>CONTACT US</h2>
+              <p>궁금하신 사항이 있으시면 문의를 남겨주세요.<br>
+              담당자가 빠르고 자세하게 안내해 드리겠습니다.</p>
+              <div class="telemail">
+                <div>Tel.<br>Email.</div>
+                <div>02-852-7788<br>support@selvasai.com</div>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="inner none_type">
+              <ul class="table">
+                <li>문의 종류를 선택 해 주세요.</li>
+                <li>
+                  <select id="(선택)" class="input">
+                    <option value="0" disabled selected hidden>(선택)</option>
+                    <option value="1">음성인식</option>
+                    <option value="2">음성합성</option>
+                    <option value="3">필기인식</option>
+                </select>
+                </li>
+                <li>담당자</li>
+                <li><input type="text" class="input"></li>
+                <li>이메일</li>
+                <li><input type="text" class="input"></li>
+                <li>연락처</li>
+                <li><input type="text" class="input">-<input type="text" class="input">-<input type="text" class="input"></li>
+                <li>회사명</li>
+                <li><input type="text" class="input"></li>
+                <li>문의하실 내용을 적어주세요.</li>
+                <li><input type="text" class="input"></li>
+                <li><input type="checkbox">개인정보 수집에 동의합니다.</li>
+                <a href="#contactus" class="button">문의하기</a>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer">
+      <div class="footer_top">
+        <!-- top area of footer -->
+        <div class="container">
+          <div class="row">
+            <div class="column footer_logo">
+              <!-- footer logo -->
+              <h3><img src="./img/footer/footer-logo.png" alt=""></h3>
+            </div>
+            <div class="column">
+              <!-- site map -->
+              <h4>site map</h4>
+              <ul>
+                <li><a href="#intro">HOME</a></li>
+                <li><a href="#humanliketech">INTRODUCE</a></li>
+                <li><a href="#selvytech">SELVY TECHNOLOGY</a></li>
+                <li><a href="#product">PRODUCT</a></li>
+                <li><a href="#lab">LAB</a></li>
+                <li><a href="#partner">PARTNER</a></li>
+                <li><a href="#contactus">CONTACT US</a></li>
+              </ul>
+            </div>
+            <div class="column">
+              <!-- contact us -->
+              <h4>address</h4>
+              <p>
+                서울특별시 금천구 가산디지털1로 19, 20층<br>(가산동, 대륭테크노타운 18차)<br>
+                <strong>phone&nbsp;:</strong><a href="tel=+82-02-852-7788">+82-02-852-7788</a>
+                <strong>Email&nbsp;:</strong><a href="mailto:rkdud91455@gmail.com">rkdud91455@gmail.com</a>
+              </p>
+            </div>
+            <div class="column news">
+              <!-- news -->
+              <h4>family site</h4>
+              <form action="">
+                <select id="Family site">
+                  <option value="0" disabled selected hidden>Family site</option>
+                  <option value="1">SELVAS AI</option>
+                  <option value="2">Selvy Speech</option>
+                  <option value="3">Selvy CloudAPI</option>
+                  <option value="4">Selvy Checkup</option>
+                  <option value="5">OnFit</option>
+                  <option value="6">Selvy Pen</option>
+                </select>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <!-- bottom area of footer -->
+        <div class="copyright">
+          ⓒcopyright <strong>MyPage</strong> .ALL Rights Reserved.
+        </div>
+        <div class="credits">
+          Designed By <a href="mailto:rkdud91455@gmail.com">김가영</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

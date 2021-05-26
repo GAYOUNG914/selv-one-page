@@ -1,0 +1,781 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+select:focus {
+  outline: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+/*common ui*/
+.button {
+  font-size: 14px;
+  font-weight: 700;
+  height: 20px; /*padding 아래위로 20씩 줬으니까 총 높이 60px*/
+  line-height: 20px;
+  letter-spacing: 0px;
+  display: inline-block;
+  padding: 20px;
+  margin: 10px;
+  color: #fff;
+  background: #000;
+  text-transform: uppercase;
+  transition: 0.5s;
+  width: 100%;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: #00aeee;
+  color: #fff;
+}
+
+/* back_to_top button*/
+.back_to_top {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  right: 10px;
+  bottom: 10px;
+  background: black;
+  z-index: 900;
+  border-radius: 100%;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); /*아래 옆 spread*/
+  /*exposed or unexposed back_to_top button*/
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.back_to_top a {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.on {
+  opacity: 1;
+}
+
+/*MOBILE*/
+/*mobile button area*/
+input[type="checkbox"]#gnbcheck {
+  display: none;
+}
+
+#gnbbtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  z-index: 900;
+  display: none;
+}
+
+/* mobile button line style */
+#gnbbtn > span {
+  position: absolute;
+  width: 32px;
+  height: 1.6px;
+  background: #fff;
+  top: 16px;
+  transform: translateY(-50%); /*중앙으로*/
+  /* transition: .5s; */
+}
+
+#gnbbtn > span:nth-child(1) {
+  top: 8px;
+}
+#gnbbtn > span:nth-child(3) {
+  top: 24px;
+}
+
+/*mobile close button*/
+#mobile_close_btn {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+}
+
+#mobile_close_btn::before,
+#mobile_close_btn:after {
+  content: "";
+  position: absolute;
+  height: 1.6px;
+  width: 32px;
+  background: #fff;
+  top: 16px;
+  transform: translateY(-50%) rotate(40deg);
+}
+
+#mobile_close_btn::before,
+#mobile_close_btn:before {
+  transform: translateY(-50%) rotate(-40deg);
+}
+
+/*HEADER*/
+/*header area*/
+#header {
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+  top: 0;
+  background: rgba(0, 0, 0, 0);
+  z-index: 800;
+}
+
+/*top logo area*/
+
+#top_logo {
+  float: left;
+}
+
+#top_logo a {
+  color: #fff;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 20px;
+  font-size: 24px;
+}
+
+/*gnb area*/
+
+#gnb {
+  float: right;
+}
+
+#gnb ul {
+  overflow: hidden;
+}
+
+#gnb ul li {
+  float: left;
+  font-size: 1vw;
+}
+
+#gnb ul li a {
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 15px;
+}
+
+/*SECITON*/
+/*section common style*/
+
+section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  min-height: 100vh; /*새로 생길 컨텐츠 잘림을 방지*/
+  box-sizing: border-box;
+}
+
+section:nth-child(even) {
+  background: #efefef;
+}
+
+section#intro article .button {
+  padding: 15px 30px;
+  height: 30px;
+  line-height: 30px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  display: inline;
+  position: relative;
+  top: 60px;
+}
+
+section#intro article .button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+section#intro {
+  background: url("../img/intro/intro.png") center center no-repeat;
+  background-size: cover;
+}
+
+section > article {
+  text-align: center;
+  padding: 0 20%;
+  color: #fff;
+  position: relative;
+  top: -20px;
+}
+
+section > article h2 {
+  font-size: 80px;
+  font-weight: lighter;
+}
+
+section > article > p {
+  font-size: 18px;
+  padding: 20px;
+}
+
+section#humanliketech {
+  background: url("../img/humanlike-technology.png") no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/*section row common style*/
+section .row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 1410px;
+  padding: 120px 20px;
+  box-sizing: border-box;
+  z-index: 500;
+  opacity: 0;
+  transform: translateY(500px);
+  transition: 1s;
+}
+
+section#humanliketech .row {
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+section#humanliketech .row > div:nth-child(1) {
+  font-size: 22px;
+  font-weight: 300;
+}
+
+section#humanliketech .row > div:nth-child(2) {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+section#selvytech {
+  background: url("../img/selvytechnology/selvytechnology_bg.png");
+}
+
+section#selvytech .column:hover {
+  transform: scale(1.02);
+  transition: 0.5s;
+}
+
+section#selvytech .row p {
+  position: absolute;
+  top: 120px;
+  right: 0;
+  left: 0;
+  height: 20px;
+  line-height: 20px;
+  /* padding: 20px 0; */
+  text-align: center;
+  color: #fff;
+}
+
+/*section row h2 common style*/
+section .row > h2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 80px;
+  line-height: 80px;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 60px;
+  text-shadow: 0px 2px 6px rgb(0 0 0 / 50%);
+  color: #fff;
+  /* background: red; */
+}
+
+/*section row column style*/
+/* section#selvytech .row .column {
+  position: absolute;
+  top: 140px;
+  right: 0;
+  left: 0;
+} */
+
+section .row .column {
+  flex: 20%;
+}
+
+section#selvytech .row .column {
+  margin-top: 100px;
+}
+
+section .row .column .inner {
+  margin: 15px;
+  padding: 15px;
+  background: white;
+  border: 1px solid #f1f1;
+  box-sizing: border-box;
+  /* box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); */
+  border-radius: 5px;
+  text-align: center;
+}
+
+section .row .column .inner img {
+  width: 100%;
+} /*뭐지???? flex 25%주고 img 100%했는데 왜 정리가되는거지*/
+
+section .row .column .inner img.shadow {
+  /* box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); */
+  box-sizing: border-box;
+  /* border: 1px solid #f1f1f1; */
+  transition: 1s;
+  border-radius: 5px;
+}
+
+section .row .column .inner img.shadow:hover {
+  box-shadow: none;
+}
+
+/*product*/
+section#product .row {
+  margin-top: 100px;
+}
+
+section#product h2 {
+  text-shadow: none;
+}
+
+section#product .row h2 {
+  background: url(../img/product/product&solution.png) center center no-repeat;
+  background-size: contain;
+  color: #000;
+}
+
+section#product .row .column {
+  flex: calc(50% - 80px);
+  min-height: 460px;
+  margin: 10px;
+  padding: 10px;
+  /* background-size: cover; */
+}
+
+section#product .row .column:hover {
+  transform: scale(0.99);
+  transition: 0.5s;
+}
+
+section#product .row .column .inner {
+  text-align: left;
+}
+
+section#product .row .column:nth-of-type(1) {
+  background: url(../img/product/1.png) center center no-repeat;
+}
+
+section#product .row .column:nth-of-type(2) {
+  background: url(../img/product/2.png) center center no-repeat;
+}
+
+section#product .row .column:nth-of-type(3) {
+  background: url(../img/product/3.png) center center no-repeat;
+}
+
+section#product .row .column:nth-of-type(4) {
+  background: url(../img/product/4.png) center center no-repeat;
+}
+
+section#product .row .column .inner img {
+  width: 224px;
+}
+
+section#product .row .column .inner p {
+  text-align: left;
+  color: #fff;
+  font-weight: bold;
+}
+
+section#product .row .column .inner a div {
+  position: relative;
+}
+
+section#product .row .column .inner a div img {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 1px;
+}
+
+/*lab*/
+section#lab {
+  background-color: #f6f6f6;
+}
+
+section#lab .row .column {
+  flex: 100%;
+}
+
+section .row .column .inner.none_type {
+  border: 0;
+  box-shadow: none;
+  background: none;
+}
+
+section .row .column .inner.none_type h2 {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+section .row .column .inner.none_type h2 span {
+  text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px #000000;
+  color: rgb(247, 247, 247);
+}
+
+section .row .column .inner.none_type .button {
+  width: 610px;
+}
+
+/*partner*/
+section#partner h2 {
+  text-shadow: none;
+}
+
+section#partner .row .column {
+  flex: calc(100% / 6);
+}
+
+section#partner .row .column .inner {
+  margin-top: 50px 0 0 0;
+  padding: 0;
+}
+
+section#partner .row h2 {
+  color: #000;
+}
+
+/*contact us*/
+input[type="text"] {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section#contactus .button {
+  margin: 15px 0;
+}
+
+section#contactus {
+  background-color: #474c5b;
+  color: #fff;
+}
+
+section#contactus .row {
+  width: 85%;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  margin: 0 auto;
+}
+
+section#contactus .row .column {
+  flex: 50%;
+}
+
+section#contactus .row .column .inner {
+  text-align: left;
+}
+
+section#contactus .row .column .inner .table > li > .input {
+  width: 100%;
+}
+
+section#contactus .row .column .inner .table > li:nth-child(2) > .input {
+  height: 36px;
+  line-height: 36px;
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+section#contactus .row .column .inner .table > li:nth-child(2) > .input option {
+  color: #000;
+}
+
+section#contactus .row .column .inner .table > li:nth-child(8) > .input {
+  width: 65px;
+  margin: 0 5px;
+  vertical-align: middle;
+}
+
+section#contactus
+  .row
+  .column
+  .inner
+  .table
+  > li:nth-child(8)
+  > .input:first-child {
+  margin-left: 0;
+}
+
+section#contactus .row .column .inner .table > li:nth-child(12) > .input {
+  margin: 0px 23px 0px 0px;
+  height: 75px;
+}
+
+section#contactus .row .column .inner .table > li:nth-child(odd) {
+  margin: 0 0 5px;
+}
+
+section#contactus .row .column .inner .table > li:nth-child(odd):after {
+  content: "•";
+  color: red;
+  padding: 0 5px;
+}
+
+section#contactus .row .column .inner .table > li:nth-child(even) {
+  padding: 0 0 15px;
+}
+
+section#contactus .row .column .inner .table > li:nth-child(even) > .input {
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  line-height: 30px;
+}
+
+section#contactus .row .column .inner .table .button {
+  background-color: rgba(0, 174, 238, 0);
+  border: 1px solid #fff;
+  padding: 10px 0;
+  width: 100%;
+}
+
+section#contactus .row .column .inner .table .button:hover {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 10px 0;
+}
+
+section#contactus .row .column .inner .telemail {
+  display: flex;
+  justify-content: flex-start;
+}
+
+section#contactus .row .column .inner .telemail div:nth-child(2) {
+  margin-left: 20px;
+}
+
+/* active interaction */
+section.active .row {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+/* footer area */
+#footer {
+  background-color: #373843;
+  color: #fff;
+  font-size: 14px;
+}
+
+#footer .footer_top {
+  background-color: #373843;
+  padding: 60px 0 30px;
+}
+
+/* footer container common sytle */
+#footer .container {
+  /*footer_top의 .container와 #footer > .contaier의 공통요소*/
+  margin: 0 auto;
+  width: 80%;
+}
+
+#footer > .container {
+  padding: 30px 0;
+  text-align: center;
+}
+
+#footer > .container:nth-of-type(2) {
+  border-top: 1px solid #555;
+}
+
+#footer .container .row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#footer .container .row .column {
+  flex: 25%;
+  box-sizing: border-box;
+  padding: 0 10px;
+  margin-bottom: 30px;
+}
+
+#footer .container .row .column.footer_logo h3 {
+  margin: 0 0 20px 0;
+  border-left: 4px solid #18d26e;
+}
+
+#footer .container .row .column.footer_logo h3 img {
+  width: 111px;
+  padding: 0 5px;
+}
+
+#footer .container .row .column h4 {
+  position: relative;
+  font-size: 14px;
+  font-weight: 700; /*bold*/
+  color: #fff;
+  text-transform: uppercase;
+  padding-bottom: 12px; /*보터 바텀과의 거리*/ /*근데 before after로 라인 height 2px을 줬으니 결론적으로 10px의 거리가 생김*/
+  margin-bottom: 20px; /*li와의 거리*/
+}
+
+/*h4:before, after common style*/
+#footer .container .row .column h4:before,
+#footer .container .row .column h4:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+}
+
+#footer .container .row .column h4:before {
+  right: 0; /*left0 right0이면 width100%과 같은말임*/
+  background: #555;
+}
+
+#footer .container .row .column h4:after {
+  width: 60px;
+  background: #18d26e;
+}
+
+/*list style*/
+#footer .container .row .column ul li {
+  border-bottom: 1px solid rgb(93, 93, 93);
+  padding: 10px 0;
+}
+
+#footer .container .row .column ul li:nth-child(1) {
+  padding-top: 0;
+}
+
+#footer .container .row .column p {
+  line-height: 26px;
+}
+
+#footer .container .row .column.news input {
+  float: left;
+}
+
+#footer .container .row .column.news select {
+  min-width: 200px;
+  background-color: #373843;
+  color: #fff;
+  padding: 14px 60px;
+  font-size: 14px;
+  border: 1;
+  border-radius: 3px;
+  border: 1px solid #adadad;
+  text-align: center;
+  appearance: none;
+}
+
+#footer .container .row .column.news select:hover {
+  background: #000;
+}
+
+/*반응형 style*/
+@media screen and (max-width: 1200px) {
+  section .row .column {
+    flex: 50%;
+  }
+
+  #footer .container {
+    width: 100%;
+  }
+  #footer .container .row .column {
+    flex: 50%;
+  }
+}
+
+/* table pc */
+@media screen and (max-width: 767px) {
+  section .row .column {
+    flex: 100%;
+  }
+
+  section#intro article p {
+    font-size: 2vw;
+  }
+
+  section#intro article h2 {
+    font-size: 4vw;
+  }
+
+  section#partner .row .column {
+    flex: calc(100% / 3);
+  }
+
+  section#contactus .row {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section#contactus .row .column {
+    flex: 100%;
+    width: 100%;
+  }
+
+  #footer .container .row .column {
+    flex: 100%;
+  }
+
+  /*mobile gnb*/
+
+  #mobile_close_btn {
+    display: block;
+  }
+
+  #gnbbtn {
+    display: block;
+  }
+
+  input[type="checkbox"]#gnbcheck:checked ~ #header #gnb {
+    left: 0;
+  }
+
+  #gnb {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    width: 80%; /*width 줘야 transition 먹음(?)*/
+    background: rgba(0, 0, 0, 0.8);
+    transition: 0.5s ease-in-out;
+  }
+
+  #gnb ul {
+    padding-top: 50px;
+  }
+
+  #gnb ul li {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 10px;
+  }
+
+  #header {
+    position: absolute; /*fixed 해도되는데 구조 달라져서 다시 잡아줘야함*/
+  }
+}
